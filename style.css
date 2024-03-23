@@ -1,0 +1,94 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    background: radial-gradient(circle at top, #0f0c29, #302b63, #24243e);
+    color: white;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.app {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+h1 {
+    text-align: center;
+}
+
+#todo-input, #add-todo-btn {
+    margin: 0 5px;
+}
+
+#todo-input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#add-todo-btn {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.task-bubble {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/* This class is added to task bubble during dragging */
+.dragging {
+    opacity: 0.5;
+}
+.task-bubble {
+    /* ... existing styles ... */
+    transition: transform 0.1s ease-in-out;
+}
+
+.task-bubble {
+    /* ... existing styles ... */
+    background-color: #282c34; /* Dark theme color for task bubble */
+    color: #ffffff; /* White text color */
+    border: 1px solid #5c5f66; /* Slight border to make the bubble pop */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    position: absolute;
+    overflow: hidden; /* Ensures nothing spills out of the bubble */
+}
+
+.delete-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 8px;
+    background-color: #ff4757; /* A bright color for attention */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 5px 0 15px; /* Rounded corner on the top right */
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2); /* Corresponding shadow */
+}
+
+.delete-btn:hover {
+    background-color: #e84118; /* Darker shade on hover for feedback */
+}
